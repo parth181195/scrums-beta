@@ -1,1 +1,1 @@
-# scrums_alpha
+# scrums-beta
