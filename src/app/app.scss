@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/v2/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,22 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@font-face {
+    font-family: "space-reg";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Space Mono r"), url("../assets/fonts/Space Mono r.ttf") format("truetype"),
+}
+
+;
+@font-face {
+    font-family: "space-bold";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Space Mono b"), url("../assets/fonts/Space Mono b.ttf") format("truetype"),
+}
+
+#logo {
+    height: 22px;
+    transform: rotate(-45deg)
+}
