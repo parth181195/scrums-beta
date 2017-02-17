@@ -1,34 +1,25 @@
+<!--
+  Generated template for the PinnedBords page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header no-border>
+
     <ion-navbar color="white">
-        <ion-buttons start>
-            <button ion-button (click)="GotoPinned()">
-<img id="logo" src="assets/images/pin.svg" alt="">
-      </button>
-        </ion-buttons>
-        <ion-title>Home</ion-title>
+        <ion-title>pinned-bords</ion-title>
     </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
-    <div class="board-wrapper" (panend)="panStop($event)" (pan)="pan($event)" (swipe)="swipeEvent($event)">
-        <!--<div class="board" *ngFor="let board of boards" [ngStyle]="{'z-index' : board['z-index'], 'opacity' : board['opacity']}">-->
-        <div class="board" *ngFor="let board of boards;let i=index;" [ngStyle]="{'left':board['left']}" [@state]="board['state']" id="location_{{i}}">
+    <div class="board-wrapper">
+        <div class="board" *ngFor="let i of [1,2,3,4]" attr.id="Location{{i}}">
             <div class="content-wrapper">
                 <div class="title-wrapper">
-                    <div class="title">{{board["title"]}}</div>
+                    <div class="title">FinFox</div>
                     <div class="pin">
-                        {{board["state"]}}
-                        <!--<img src="assets/images/pin.svg" alt="">-->
-                    </div>
-                </div>
-                <div class="progress-wrapper">
-                    <div class="in-progress">
-                        <div class="title">In progress</div>
-                        <div class="disc">veque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</div>
-                    </div>
-                    <div class="emergency">
-                        <div class="title">Emergency</div>
-                        <div class="disc">veque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</div>
+                        <img src="assets/images/pin.svg" alt="">
                     </div>
                 </div>
                 <div class="tasks-wrapper">

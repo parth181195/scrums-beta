@@ -1,27 +1,26 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import 'hammerjs';
-import 'hammer-timejs';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
-import { SignupPage } from '../pages/signup/signup';
-
+import { InviteModal } from '../pages/home/invite-modal/invite';
+import { PinnedBoardsPage } from '../pages/pinned-boards/pinned-boards';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LoginPage,
-    SignupPage
+    InviteModal,
+    PinnedBoardsPage
+
   ],
   imports: [
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    InviteModal,
+    PinnedBoardsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
