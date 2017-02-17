@@ -86,6 +86,7 @@ declare var $;
 })
 export class HomePage {
   cards;
+  swipeOff = true;
   constructor(public navCtrl: NavController, public actionCtrl: ActionSheetController, public alertCtrl :AlertController,public modCtrl: ModalController) {
 
   }
@@ -94,18 +95,21 @@ export class HomePage {
 
   swipeEvent(e) {
     console.log("swiped");
-    // console.log($("#location_0").css("left"));
+    // console.  log($("#location_0").css("left"));
     this.boards[0]["left"] = "50%";
     this.boards[0]["state"] = 7;
+    if(this.swipeOff){
     if(e.direction == 2){
+      console.log(e.direction);
       this.boards[0]["state"] = 6;
       this.change(1);
       }
     else if(e.direction == 4){
+      console.log(e.direction);
       this.boards[0]["state"] = 5;
       this.change(1);
       }
-    
+    }
   }
   pan(e){
     let dist = $("#location_0").css("left")
@@ -115,11 +119,13 @@ export class HomePage {
     // console.log(this.boards[0]["state"]);
     // console.log(res,"+",e.distance,"---",test);
     this.boards[0]["left"] = test+"px";
+    this.swipeOff = false;
   }
   panStop(e){
     if(e.distance < 50){
     this.boards[0]["state"] = 1;
     // console.log(e.distance);
+    this.swipeOff = true;
   }
   else{
     if(e.direction == 2){
@@ -172,15 +178,15 @@ boards;
   }
   }
   change(dir){
-    let temp = this.boards[0]
     this.boards[0]["state"]=0
+    let temp = this.boards[0]
     this.boards.push(temp)
     this.boards.splice(0,1)
     for(let i = 0; i<this.boards.length; i++){
       let board = this.boards[i];
-      // console.log(this.boards[i]["state"]);
+      console.log(this.boards[i]["title"]);
       if(i<4){
-      board["state"]= i+(1*dir)
+      board["state"]= i+1
     }
     else{
       board["state"]= 0
@@ -191,7 +197,7 @@ boards;
   //  navigation   //
   //---------------//
 
-  GotoPinned(){
+  goToPinned(){
     this.navCtrl.setRoot(PinnedBoardsPage)
   }
    presentInviteModal() {

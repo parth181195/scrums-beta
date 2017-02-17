@@ -1,3 +1,9 @@
 page-board {
-
+    .tabbar {
+        background: #fff !important;
+        border: none !important;
+        .tab-button-text {
+            line-height: 1.2 !important;
+        }
+    }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { HomePage } from '../home/home';
 /*
   Generated class for the PinnedBords page.
 
@@ -14,7 +14,9 @@ import { NavController, NavParams } from 'ionic-angular';
 export class PinnedBoardsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
+goToHome(){
+    this.navCtrl.setRoot(HomePage)
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PinnedBordsPage');
   }
