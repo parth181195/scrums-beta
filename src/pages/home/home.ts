@@ -1,4 +1,4 @@
-import { DIRECTION_LEFT } from 'ionic-angular/gestures/hammer';
+// import { DIRECTION_LEFT } from 'ionic-angular/gestures/hammer';
 import { 
   Component,
   OnInit,
