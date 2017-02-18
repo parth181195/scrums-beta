@@ -12,14 +12,12 @@
 <ion-content padding>
 
     <div class="board-wrapper" (panend)="panStop($event)" (pan)="pan($event)" (swipe)="swipeEvent($event)">
-        <!--<div class="board" *ngFor="let board of boards" [ngStyle]="{'z-index' : board['z-index'], 'opacity' : board['opacity']}">-->
-        <div class="board" *ngFor="let board of boards;let i=index;" [ngStyle]="{'left':board['left']}" [@state]="board['state']" id="location_{{i}}" (click)="goToBaord()">
+        <div class="board" *ngFor="let card of cards;let i=index; " [ngStyle]="{'left':cards[i]['left']}" [@state]="cards[i]['state']" id="location_{{i}}" (click)="goToBoard()">
             <div class="content-wrapper">
                 <div class="title-wrapper">
-                    <div class="title">{{board["title"]}}</div>
+                    <div class="title">{{card["title"]}}</div>
                     <div class="pin">
-                        {{board["state"]}}
-                        <!--<img src="assets/images/pin.svg" alt="">-->
+                        <img src="assets/images/pin.svg" alt="">
                     </div>
                 </div>
                 <div class="progress-wrapper">

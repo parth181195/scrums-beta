@@ -1,3 +1,4 @@
+// import { AddBoardModal } from './add-baord/add-board';
 // import { DIRECTION_LEFT } from 'ionic-angular/gestures/hammer';
 import { 
   Component,
@@ -13,7 +14,7 @@ import { InviteModal } from "./invite-modal/invite"
 import { AddBoardModal } from "./add-board/add-board"
 import { PinnedBoardsPage } from "../pinned-boards/pinned-boards"
 import { BoardPage } from "../board/board"
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 declare var $;
 
 @Component({
@@ -88,31 +89,32 @@ declare var $;
   ]
 })
 export class HomePage {
-  cards;
+  // cards;
   swipeOff = true;
-  boards;
-  Boards: FirebaseListObservable<any>;
+  cards;
+  boards: FirebaseListObservable<any>;
   constructor(public navCtrl: NavController, public actionCtrl: ActionSheetController, public alertCtrl :AlertController,public modCtrl: ModalController, af: AngularFire) {
-  this.Boards = af.database.list('/');
-  // console.log(this.Boards[""]);
+  // console.log(this.cards[""]);
+  this.boards = af.database.list('/boards');
+  console.log(this.boards);
+  
   }
-
 
 
   swipeEvent(e) {
     console.log("swiped");
     // console.  log($("#location_0").css("left"));
-    this.boards[0]["left"] = "50%";
-    this.boards[0]["state"] = 7;
+    this.cards[0]["left"] = "50%";
+    this.cards[0]["state"] = 7;
     if(this.swipeOff){
     if(e.direction == 2){
       console.log(e.direction);
-      this.boards[0]["state"] = 6;
+      this.cards[0]["state"] = 6;
       this.change(1);
       }
     else if(e.direction == 4){
       console.log(e.direction);
-      this.boards[0]["state"] = 5;
+      this.cards[0]["state"] = 5;
       this.change(1);
       }
     }
@@ -121,32 +123,32 @@ export class HomePage {
     let dist = $("#location_0").css("left")
     var res = Number(dist.replace("px",""));
     let test = res + (e.distance * (e.velocityX))
-    this.boards[0]["state"] = 7;
-    // console.log(this.boards[0]["state"]);
+    this.cards[0]["state"] = 7;
+    // console.log(this.cards[0]["state"]);
     // console.log(res,"+",e.distance,"---",test);
-    this.boards[0]["left"] = test+"px";
+    this.cards[0]["left"] = test+"px";
     this.swipeOff = false;
   }
   panStop(e){
     if(e.distance < 50){
-    this.boards[0]["state"] = 1;
+    this.cards[0]["state"] = 1;
     // console.log(e.distance);
     this.swipeOff = true;
   }
   else{
     if(e.direction == 2){
-    this.boards[0]["state"] = 6;
+    this.cards[0]["state"] = 6;
     }
     else if(e.direction == 4){
-    this.boards[0]["state"] = 5;
+    this.cards[0]["state"] = 5;
     }
     this.change(1)
     }
   }
 
-// boards;
+// cards;
   ionViewDidLoad() {
-  this.boards = [
+  this.cards = [
     {
       'title' : 1
     },
@@ -172,30 +174,30 @@ export class HomePage {
       'title' : 8
     },
   ]
-  for(let i = 0; i < this.boards.length; i++) {
-    let board = this.boards[i];
-    board['left'] = "50%";
-    board['state'] = 0;
+  for(let i = 0; i < this.cards.length; i++) {
+    let card = this.cards[i];
+    card['left'] = "50%";
+    card['state'] = 0;
     if(i<4){
-    board['state'] = i+1;
+    card['state'] = i+1;
     }
-    // console.log(board['state']);
+    // console.log(card['state']);
     
   }
   }
   change(dir){
-    this.boards[0]["state"]=0
-    let temp = this.boards[0]
-    this.boards.push(temp)
-    this.boards.splice(0,1)
-    for(let i = 0; i<this.boards.length; i++){
-      let board = this.boards[i];
-      console.log(this.boards[i]["title"]);
+    this.cards[0]["state"]=0
+    let temp = this.cards[0]
+    this.cards.push(temp)
+    this.cards.splice(0,1)
+    for(let i = 0; i<this.cards.length; i++){
+      let card = this.cards[i];
+      console.log(this.cards[i]["title"]);
       if(i<4){
-      board["state"]= i+1
+      card["state"]= i+1
     }
     else{
-      board["state"]= 0
+      card["state"]= 0
     }
     }
   }
@@ -203,7 +205,7 @@ export class HomePage {
   //  navigation   //
   //---------------//
 
-goToBaord(){
+goToBoard(){
     this.navCtrl.push(BoardPage)
 }
   goToPinned(){
@@ -253,7 +255,7 @@ openSheet(){
          text: 'Remove My Self',
          role: 'destructive',
          handler: () => {
-           this.showConfirm("Remove Yourself","remove yourself from this board")
+           this.showConfirm("Remove Yourself","remove yourself from this card")
            console.log('Destructive clicked');
          }
        },
@@ -261,7 +263,7 @@ openSheet(){
          text: 'Delete',
          role: 'destructive',
          handler: () => {
-           this.showConfirm("Delete this Board","delete this board")
+           this.showConfirm("Delete this card","delete this card")
            console.log('Archive clicked');
          }
        },
