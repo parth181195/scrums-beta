@@ -10,9 +10,10 @@ import {
 
 import { NavController,ActionSheetController,AlertController,ModalController  } from 'ionic-angular';
 import { InviteModal } from "./invite-modal/invite"
+import { AddBoardModal } from "./add-board/add-board"
 import { PinnedBoardsPage } from "../pinned-boards/pinned-boards"
 import { BoardPage } from "../board/board"
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 declare var $;
 
 @Component({
@@ -89,9 +90,11 @@ declare var $;
 export class HomePage {
   cards;
   swipeOff = true;
-  songs: FirebaseListObservable<any>;
+  boards;
+  Boards: FirebaseListObservable<any>;
   constructor(public navCtrl: NavController, public actionCtrl: ActionSheetController, public alertCtrl :AlertController,public modCtrl: ModalController, af: AngularFire) {
-  this.songs = af.database.list('/songs/test/set');
+  this.Boards = af.database.list('/');
+  // console.log(this.Boards[""]);
   }
 
 
@@ -114,35 +117,6 @@ export class HomePage {
       }
     }
   }
-  addSong(){
-  let prompt = this.alertCtrl.create({
-    title: 'Song Name',
-    message: "Enter a name for this new song you're so keen on adding",
-    inputs: [
-      {
-        name: 'title',
-        placeholder: 'Title'
-      },
-    ],
-    buttons: [
-      {
-        text: 'Cancel',
-        handler: data => {
-          console.log('Cancel clicked');
-        }
-      },
-      {
-        text: 'Save',
-        handler: data => {
-          this.songs.push({
-            title: data.title
-          });
-        }
-      }
-    ]
-  });
-  prompt.present();
-}
   pan(e){
     let dist = $("#location_0").css("left")
     var res = Number(dist.replace("px",""));
@@ -170,7 +144,7 @@ export class HomePage {
     }
   }
 
-boards;
+// boards;
   ionViewDidLoad() {
   this.boards = [
     {
@@ -237,6 +211,10 @@ goToBaord(){
   }
    presentInviteModal() {
    let contactModal = this.modCtrl.create(InviteModal);
+   contactModal.present();
+ }
+   presentAddBoardModal() {
+   let contactModal = this.modCtrl.create(AddBoardModal);
    contactModal.present();
  }
     showConfirm(titleArgs,discArgs) {

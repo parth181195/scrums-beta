@@ -15,27 +15,17 @@ import { HomePage } from '../home/home'
 export class LoginPage {
   error:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public af: AngularFire) {
-    this.af.auth.subscribe(auth => { 
-      if(auth) {
-        this.navCtrl.setRoot(HomePage)
-      }
-    });
+    // this.af.auth.subscribe(auth => { 
+    //   if(auth) {
+    //     this.navCtrl.setRoot(HomePage)
+    //   }
+    // });
 
   }
 
 loginGoogle() {
-    this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup,
-    }).then(
-        (success) => {
        this.navCtrl.setRoot(HomePage)
-      }).catch(
-        (err) => {
-        this.error = err;
-        console.log(err);
-        
-      })
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');

@@ -1,0 +1,104 @@
+{
+    "boards": {
+
+        "board1": {
+            "id": "1",
+            "header": "parth",
+            "members": {
+                "member1": {
+                    "email": "parth@outlook.com"
+                },
+                "member2": {
+                    "email": "parth@outlook.com"
+                },
+                "member3": {
+                    "email": "parth@outlook.com"
+                }
+            },
+            "tasks": {
+                "task1": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task2": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task3": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task4": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                }
+            }
+        },
+        "board2": {
+            "id": "1",
+            "header": "parth",
+            "members": {
+                "member1": {
+                    "email": "parth@outlook.com"
+                },
+                "member2": {
+                    "email": "parth@outlook.com"
+                },
+                "member3": {
+                    "email": "parth@outlook.com"
+                }
+            },
+            "tasks": {
+                "task1": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task2": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task3": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task4": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                }
+            }
+        },
+        "board3": {
+            "id": "1",
+            "header": "parth",
+            "members": {
+                "member1": {
+                    "email": "parth@outlook.com"
+                },
+                "member2": {
+                    "email": "parth@outlook.com"
+                },
+                "member3": {
+                    "email": "parth@outlook.com"
+                }
+            },
+            "tasks": {
+                "task1": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task2": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task3": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                },
+                "task4": {
+                    "header": "tasktitle",
+                    "status": "todo"
+                }
+            }
+        }
+    }
+}

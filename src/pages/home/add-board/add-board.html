@@ -1,0 +1,23 @@
+<ion-header no-border>
+    <ion-navbar color="white">
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+        <span color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Add Board</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="form-wrapper">
+        <form (ngSubmit)="pushdata()" [formGroup]="boardForm">
+            <ion-item class="field">
+                <ion-label><img src="assets/images/user2.svg" alt="" class="logo" style="height: 20px"></ion-label>
+                <ion-input type="text" value="" placeholder="Username" formControlName="boardname"></ion-input>
+            </ion-item>
+            <button id="submit" ion-button icon-right round>Login</button>
+        </form>
+    </div>
+</ion-content>

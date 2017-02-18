@@ -5,6 +5,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { InviteModal } from '../pages/home/invite-modal/invite';
+import { AddBoardModal } from '../pages/home/add-board/add-board';
 import { PinnedBoardsPage } from '../pages/pinned-boards/pinned-boards';
 import { BoardPage } from '../pages/board/board';
 import { DoingTab } from '../pages/board/doing/doing';
@@ -36,6 +37,7 @@ export const firebaseConfig = {
     ToDoTab,
     LoginPage,
     SignupPage,
+    AddBoardModal,
 
   ],
   imports: [
@@ -55,6 +57,7 @@ export const firebaseConfig = {
     ToDoTab,
     LoginPage,
     SignupPage,
+    AddBoardModal,
 
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
