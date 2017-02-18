@@ -6,13 +6,23 @@
       </button>
         </ion-buttons>
         <ion-title>Home</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="addSong()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let song of songs | async" (click)="showOptions(song.$key, song.title)">
+            {{song.title}}
+        </ion-item>
+    </ion-list>
     <div class="board-wrapper" (panend)="panStop($event)" (pan)="pan($event)" (swipe)="swipeEvent($event)">
         <!--<div class="board" *ngFor="let board of boards" [ngStyle]="{'z-index' : board['z-index'], 'opacity' : board['opacity']}">-->
-        <div class="board" *ngFor="let board of boards;let i=index;" [ngStyle]="{'left':board['left']}" [@state]="board['state']" id="location_{{i}}">
+        <div class="board" *ngFor="let board of boards;let i=index;" [ngStyle]="{'left':board['left']}" [@state]="board['state']" id="location_{{i}}" (click)="goToBaord()">
             <div class="content-wrapper">
                 <div class="title-wrapper">
                     <div class="title">{{board["title"]}}</div>
@@ -74,4 +84,7 @@
             </div>
         </div>
     </div>
+
+
+
 </ion-content>

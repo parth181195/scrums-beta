@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ItemSliding } from 'ionic-angular';
 
 /*
   Generated class for the Board page.
@@ -14,7 +15,9 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ToDoTab {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
+  close(slidingItem: ItemSliding){
+    // slidingItem.moveSliding(10)
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad BoardPage');
   }

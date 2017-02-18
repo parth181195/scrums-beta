@@ -5,6 +5,16 @@
   Ionic pages and navigation.
 -->
 
-<ion-content padding>
+<ion-content>
+    <ion-list *ngFor="let i of [1,2,3,4]">
+        <ion-item-sliding #item>
+            <ion-item>
+                Item
+            </ion-item>
 
+            <ion-item-options side="right">
+                <button ion-button>Do</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
 </ion-content>

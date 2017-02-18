@@ -9,6 +9,18 @@ import { DoingTab } from '../pages/board/doing/doing';
 import { DoneTab } from '../pages/board/done/done';
 import { EmergencyTab } from '../pages/board/emergency/emergency';
 import { ToDoTab } from "../pages/board/to-do/to-do"
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+
+    apiKey: "AIzaSyD4zuMZhVgZ1xLMsTb0AHKeRYpoXjwdfyo",
+    authDomain: "scrums-e17a0.firebaseapp.com",
+    databaseURL: "https://scrums-e17a0.firebaseio.com",
+    storageBucket: "scrums-e17a0.appspot.com",
+    messagingSenderId: "603416178541"
+
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +35,8 @@ import { ToDoTab } from "../pages/board/to-do/to-do"
 
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,3 +53,4 @@ import { ToDoTab } from "../pages/board/to-do/to-do"
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
+
