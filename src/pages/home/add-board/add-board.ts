@@ -4,7 +4,7 @@ import { NavController,ViewController  } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
-  selector: 'Modal-add-board',
+  selector: 'modal-add-board',
   templateUrl: 'add-board.html'
 })
 export class AddBoardModal {
