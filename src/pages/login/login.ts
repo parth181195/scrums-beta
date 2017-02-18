@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { HomePage } from '../home/home'
+import { SignupPage } from '../signup/signup'
 /*
   Generated class for the Login page.
 
@@ -24,9 +25,11 @@ export class LoginPage {
   }
 
 loginGoogle() {
-       this.navCtrl.setRoot(HomePage)
-
+  this.navCtrl.setRoot(HomePage)
   }
+goToSignUp(){
+  this.navCtrl.setRoot(SignupPage)
+}
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
