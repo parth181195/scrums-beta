@@ -1,1 +1,87 @@
-page-login {}
+page-login {
+    ion-content {
+        .logo-wrapper {
+            padding-top: 40px;
+            text-align: center;
+            img.logo {
+                width: 70%;
+                margin: auto
+            }
+        }
+        .wrapper {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            .form-wrapper {
+                margin-bottom: 30px;
+                form {
+                    text-align: center;
+                    ion-item.field {
+                        border-radius: 10px;
+                        margin-bottom: 5px;
+                        border: 1px solid rgba(#959595, 0.5);
+                        .item-inner {
+                            box-shadow: none !important;
+                            border-bottom: none !important;
+                            ion-label {
+                                margin-top: 0 !important;
+                                margin-bottom: 0 !important;
+                                transform: translate(0, 2.5px)
+                            }
+                            ion-input {
+                                input {
+                                    margin: 10px
+                                }
+                            }
+                        }
+                    }
+                    button#submit {
+                        margin-top: 20px;
+                        text-align: center;
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+            }
+            .social-login {
+                text-align: center;
+                margin-bottom: 50PX;
+                button {
+                    width: 60vw;
+                    position: relative;
+                    img {
+                        height: 20px;
+                        position: absolute;
+                        left: 25px;
+                        top: 50%;
+                        transform: translate(0, -50%)
+                    }
+                    span {
+                        font-size: 1em
+                    }
+                }
+                button.facebook {
+                    background-color: #324e91;
+                }
+                button.google {
+                    background-color: #da3d00;
+                }
+            }
+            .utils {
+                a.top {
+                    margin-bottom: 10px
+                }
+                a {
+                    display: block;
+                    color: #000
+                }
+                a.bold {
+                    // font-family: $font-b;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

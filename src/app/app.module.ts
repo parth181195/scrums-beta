@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 import { InviteModal } from '../pages/home/invite-modal/invite';
 import { PinnedBoardsPage } from '../pages/pinned-boards/pinned-boards';
 import { BoardPage } from '../pages/board/board';
@@ -32,6 +34,8 @@ export const firebaseConfig = {
     DoneTab,
     EmergencyTab,
     ToDoTab,
+    LoginPage,
+    SignupPage,
 
   ],
   imports: [
@@ -49,6 +53,9 @@ export const firebaseConfig = {
     DoneTab,
     EmergencyTab,
     ToDoTab,
+    LoginPage,
+    SignupPage,
+
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
