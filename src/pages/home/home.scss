@@ -49,7 +49,10 @@ page-home {
                             top: 7px;
                             right: 7px;
                             img {
-                                height: 22px
+                                height: 22px;
+                                &.blue {
+                                    transform: rotate(-45deg)
+                                }
                             }
                         }
                         .title {

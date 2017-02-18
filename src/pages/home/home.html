@@ -16,8 +16,9 @@
             <div class="content-wrapper">
                 <div class="title-wrapper">
                     <div class="title">{{card["title"]}}</div>
-                    <div class="pin">
-                        <img src="assets/images/pin.svg" alt="">
+                    <div class="pin" (click)="pinThis($event)">
+                        <img *ngIf="card['pin']" src="assets/images/pin.svg" alt="">
+                        <img class="blue" *ngIf="!card['pin']" src="assets/images/pin_blue.svg" alt="">
                     </div>
                 </div>
                 <div class="progress-wrapper">
@@ -61,10 +62,10 @@
                         <ion-datetime displayFormat="none" pickerFormat="DD MMM h mm A"></ion-datetime>
                         <img src="assets/images/bell.svg" alt="">
                     </div>
-                    <div class="collaborator" (click)="presentInviteModal()">
+                    <div class="collaborator" (click)="presentInviteModal($event)">
                         <img src="assets/images/user.svg" alt="">
                     </div>
-                    <div class="more" (click)="openSheet()">
+                    <div class="more" (click)="openSheet($event)">
                         <div class="round"></div>
                         <div class="round"></div>
                         <div class="round"></div>

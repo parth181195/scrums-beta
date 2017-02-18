@@ -176,6 +176,7 @@ export class HomePage {
   ]
   for(let i = 0; i < this.cards.length; i++) {
     let card = this.cards[i];
+    card["pin"] = true;
     card['left'] = "50%";
     card['state'] = 0;
     if(i<4){
@@ -204,14 +205,18 @@ export class HomePage {
   //---------------//
   //  navigation   //
   //---------------//
-
+pinThis($event){
+  $event.stopPropagation();
+  this.cards[0]["pin"] =  (this.cards[0]["pin"] === true ? false : true);
+}
 goToBoard(){
     this.navCtrl.push(BoardPage)
 }
   goToPinned(){
     this.navCtrl.setRoot(PinnedBoardsPage)
   }
-   presentInviteModal() {
+   presentInviteModal($event) {
+     $event.stopPropagation();
    let contactModal = this.modCtrl.create(InviteModal);
    contactModal.present();
  }
@@ -240,7 +245,8 @@ goToBoard(){
     });
     confirm.present();
   }
-openSheet(){
+openSheet($event){
+  $event.stopPropagation();
   let actionSheet = this.actionCtrl.create({
      title: 'Utilities',
      buttons: [
