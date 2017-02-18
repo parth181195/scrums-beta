@@ -120,7 +120,7 @@ export class HomePage {
     }
   }
   pan(e){
-    let dist = $("#location_0").css("left")
+    let dist = $("#location_0").css("left")111
     var res = Number(dist.replace("px",""));
     let test = res + (e.distance * (e.velocityX))
     this.cards[0]["state"] = 7;
