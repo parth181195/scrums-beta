@@ -13,7 +13,7 @@ import { BoardPage } from '../pages/board/board';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = LoginPage;
+  rootPage = BoardPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
